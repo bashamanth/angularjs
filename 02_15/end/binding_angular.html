@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en" ng-app="myApp">
+<head>
+  <meta charset="utf-8">
+  <title>AngularJS Data Binding</title>
+  <script src="angular.js"></script>
+</head>
+<body ng-controller="AppCtrl">
+	<h1>Data Binding - Angular Way</h1>
+	
+	Task: {{taskData.task}}<br/>
+	Done: <input type="checkbox" id="statusCheck" 
+		ng-model="taskData.status"
+		ng-click="statusChange()" />
+	
+	<script>
+	
+		(function() {
+			var name = "myApp",
+				requires = [],
+				myApp = null,
+				taskData = {
+					task: "Learning AngularJS!",
+					status: false
+				};
+			
+			myApp = angular.module(name, requires);
+			
+			myApp.controller("AppCtrl", function($scope) {
+				$scope.taskData = taskData;
+				
+				$scope.statusChange = function() {
+					console.log($scope.taskData.status);
+				}
+			});
+		}());
+		
+	</script>
+</body>
+</html>

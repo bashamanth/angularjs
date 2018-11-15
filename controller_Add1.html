@@ -1,0 +1,30 @@
+<!doctype <!DOCTYPE html>
+<html ng-app>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Controller 2</title>
+    <script src="angular.js"></script>
+    <script>
+    (function(){
+        var name="myApp",
+            requires=[],
+            myApp=null;
+        myApp=angular.module(name,requires);
+        myApp.controller("AppCtrl",function(){
+            this.employee={firstname:"Shamanth",
+                            lastname:"BA",
+                            occupation:"Engineer"};
+        });
+
+    }());
+
+
+    </script>
+
+</head>
+<body ng-controller="AppCtrl as app">
+    <p> {{app.firstname}}</p>  
+    
+</body>
+</html>

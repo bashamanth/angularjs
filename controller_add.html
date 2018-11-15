@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en" ng-app="myApp">
+<head>
+  <meta charset="utf-8">
+  <title>Angular Add</title>
+  <script src="angular.js"></script>
+  <script>
+	
+	(function() {
+		var name = "myApp",
+            requires = [],
+            myApp=null;
+		
+        myApp=angular.module(name, requires);
+
+        myApp.controller("AddController",function(){
+            this.calculate=function(fn,sn)
+            {
+                this.result=parseInt(fn)+parseInt(sn);
+            };
+
+        });
+        
+
+	}());
+	
+  </script>
+</head>
+<body ng-controller="AddController as addC">
+	
+	<h1>Addition of two numbers</h1>
+	
+	First Number: <input type="text" id="firstNumInput" ng-model="addC.fn" /> </br>
+	Second Number: <input type="text" id="secondNumInput" ng-model="addC.sn" /> </br>
+	
+	<button id="calculateBtn" ng-click="addC.calculate(addC.fn,addC.sn)">Calculate!</button> </br>
+	
+	Result: <p id="result" ng-bind="addC.result"></p>
+	
+</body>
+</html>

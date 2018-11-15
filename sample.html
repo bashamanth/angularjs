@@ -1,0 +1,39 @@
+<html>
+<head>
+
+<title>Java Script Module</title>
+
+<script>
+    //Account module
+var account =function()
+{
+    var balance=0;
+
+    var deposit =function(money)
+    {
+        balance+=money;
+        console.log("balance after deposit:",balance);
+    }
+
+    var withdraw=function(money)
+    {
+        balance-=money;
+        console.log("balance after withdrawl :",balance);   
+    }
+
+    return {
+        deposit:deposit,
+        withdraw:withdraw
+    }
+}
+var a1=account();
+a1.deposit(100);
+a1.deposit(500);
+a1.withdraw(200);
+
+</script>
+</head>
+<body>
+
+</body>
+</html>
