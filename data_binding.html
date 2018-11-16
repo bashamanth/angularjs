@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+    
+    <title>Page Title</title>
+
+    <script src="angular.js"></script>
+</head>
+<body ng-controller="myCtrl">
+
+    <h1>Data Binding in angular</h1>
+    <h5>{{task.text}}</h5>
+    Done?<input type="checkbox" ng-model="task.status" ng-click="statusChange()"> 
+    <script>
+
+        (function()
+        {
+            var name="myApp",
+                requires=[],
+                myApp=null;
+
+            var task={text:"This is Shamanth",
+                status:true};
+            myApp=angular.module(name,requires);
+            myApp.controller("myCtrl",function($scope){
+                                $scope.task=task;
+                                $scope.statusChange=function()
+                                {
+                                    console.log($scope.task.status);
+                                };
+
+
+            });
+
+        }());
+
+    </script>
+    
+</body>
+</html>
